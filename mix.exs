@@ -18,7 +18,7 @@ defmodule DummyPhoenixApp.Mixfile do
   def application do
     [mod: {DummyPhoenixApp, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger,
-                    :phoenix_ecto, :postgrex]]
+                    :phoenix_ecto, :postgrex, :httpoison]]
   end
 
   # Specifies which paths to compile per environment
