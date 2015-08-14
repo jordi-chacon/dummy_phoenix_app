@@ -18,7 +18,8 @@ defmodule DummyPhoenixApp.Mixfile do
   def application do
     [mod: {DummyPhoenixApp, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger,
-                    :phoenix_ecto, :postgrex, :httpoison]]
+                    :phoenix_ecto, :postgrex, :httpoison, :mix]],
+     included_applications: [:vex]
   end
 
   # Specifies which paths to compile per environment
@@ -36,6 +37,8 @@ defmodule DummyPhoenixApp.Mixfile do
      {:phoenix_live_reload, "~> 0.4", only: :dev},
      {:cowboy, "~> 1.0"},
      {:httpoison, "~> 0.7.0"},
-     {:exrm, "0.18.6"}]
+     {:exrm, "0.18.6"},
+     {:meck, "~> 0.8.2", override: true},
+     {:vex, "~> 0.5.3"}]
   end
 end
