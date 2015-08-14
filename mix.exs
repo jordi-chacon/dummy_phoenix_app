@@ -36,6 +36,6 @@ defmodule DummyPhoenixApp.Mixfile do
      {:phoenix_live_reload, "~> 0.4", only: :dev},
      {:cowboy, "~> 1.0"},
      {:httpoison, "~> 0.7.0"},
-     {:exrm, "0.18.3"}]
+     {:exrm, "0.18.6"}]
   end
 end
