@@ -18,8 +18,9 @@ defmodule DummyPhoenixApp.Mixfile do
   def application do
     [mod: {DummyPhoenixApp, []},
      applications: [:phoenix, :phoenix_html, :cowboy, :logger,
-                    :phoenix_ecto, :postgrex, :httpoison, :mix],
-     included_applications: [:vex]
+                    :phoenix_ecto, :postgrex, :httpoison, :mix,
+                    :edown, :exometer, :exometer_core],
+     included_applications: []
     ]
   end
 
@@ -31,7 +32,10 @@ defmodule DummyPhoenixApp.Mixfile do
   #
   # Type `mix help deps` for examples and options
   defp deps do
-    [{:phoenix, github: "phoenixframework/phoenix", branch: "master", override: true},
+    [{:edown, github: "uwiger/edown", tag: "0.7", override: true},
+     {:exometer, github: "PSPDFKit-labs/exometer"},
+     {:exometer_core, github: "PSPDFKit-labs/exometer_core", override: true},
+     {:phoenix, github: "phoenixframework/phoenix", branch: "master", override: true},
      {:phoenix_ecto, "~> 0.4"},
      {:postgrex, ">= 0.0.0"},
      {:phoenix_html, "~> 1.0"},
@@ -39,7 +43,6 @@ defmodule DummyPhoenixApp.Mixfile do
      {:cowboy, "~> 1.0"},
      {:httpoison, "~> 0.7.0"},
      {:exrm, "0.18.6"},
-     {:meck, "~> 0.8.2", override: true},
-     {:vex, "~> 0.5.3"}]
+     {:meck, "~> 0.8.2", override: true}]
   end
 end
